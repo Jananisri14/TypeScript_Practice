@@ -1,11 +1,13 @@
-import promptSync from 'prompt-sync';
+import * as fs from 'fs';
 
-const prompt = promptSync();
-const Length=prompt("Enter a length:")
-const breadth=prompt("Enter a breadth:")
-if(Length==breadth){
-    console.log("It is a Square")
+const input = fs.readFileSync(0, 'utf8').trim().split(/\s+/);
+
+const Length = Number(input[0]);
+const breadth = Number(input[1]);
+
+if (Length === breadth) {
+    console.log("It is a Square");
 }
-else{
-    console.log("Not a Square")
+else {
+    console.log("Not a Square");
 }
